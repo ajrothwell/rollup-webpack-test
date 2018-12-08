@@ -14,6 +14,13 @@ module.exports = {
     mainFields: ['module', 'main', 'browser'],
     // extensions: [".js", ".jsx"],
   },
+  devServer: {
+    contentBase: './dist',
+    // host: process.env.WEBPACK_DEV_HOST,
+    host: 'localhost',
+    // port: process.env.WEBPACK_DEV_PORT
+    port: 8080
+  },
   // externals: Object.keys(dependencies),
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -53,16 +60,16 @@ module.exports = {
   optimization: {
     providedExports: true,
     usedExports: true,
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /node_modules/,
-          chunks: 'initial',
-          name: 'vendor',
-          enforce: true,
-          priority: 5,
-        },
-      },
-    },
+    // splitChunks: {
+    //   cacheGroups: {
+    //     vendor: {
+    //       test: /node_modules/,
+    //       chunks: 'initial',
+    //       name: 'vendor',
+    //       enforce: true,
+    //       priority: 5,
+    //     },
+    //   },
+    // },
   },
 };

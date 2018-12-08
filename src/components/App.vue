@@ -1,9 +1,10 @@
 <template>
   <div>
-    <external-link
-      :options="{
-        text: 'test'
-      }"
+    <external-link class="ib"
+                   :options="{
+                      data: 'openmaps.phila.gov',
+                      href: 'https://openmaps.phila.gov'
+                   }"
     />
 
     <!-- <badge
@@ -12,6 +13,7 @@
         value: 'test'
       }"
     /> -->
+
   </div>
 </template>
 
