@@ -4,14 +4,23 @@ const dependencies = packageJson.dependencies || {};
 
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const Visualizer = require('webpack-visualizer-plugin');
+// const webpack = require('webpack');
+// const MCP = new webpack.optimize.ModuleConcatenationPlugin();
+
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
+  // mode: 'production',
   entry: {
     app: ['./public/index.html', './src/main.js'],
   },
   resolve: {
     mainFields: ['module', 'main', 'browser'],
+    alias: {
+      vue$: "vue/dist/vue.runtime.esm.js",
+      vuex$: "vuex/dist/vuex.esm.js"
+    }
     // extensions: [".js", ".jsx"],
   },
   devServer: {
@@ -19,7 +28,7 @@ module.exports = {
     // host: process.env.WEBPACK_DEV_HOST,
     host: 'localhost',
     // port: process.env.WEBPACK_DEV_PORT
-    port: 8080
+    port: 8082
   },
   // externals: Object.keys(dependencies),
   output: {
@@ -38,10 +47,17 @@ module.exports = {
         // exclude: /node_modules/,
         use: {
           loader: "babel-loader",
-          // options: {
-          //   presets: ["env", "react"]
-          // }
+          options: {
+            presets: [
+              // ['@babel/preset-env']
+              ['@babel/preset-env', {modules: false} ]
+            ]
+          }
         }
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.html/,
@@ -55,11 +71,37 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin(),
-    new Visualizer({ filename: './statistics.html' })
+    new Visualizer({ filename: './statistics.html' }),
+    // MCP
   ],
+  // stats: {
+  //   // Examine all modules
+  //   maxModules: Infinity,
+  //   // Display bailout reasons
+  //   optimizationBailout: true
+  // },
   optimization: {
-    providedExports: true,
+    // minimize: true,
+    // minimizer: [
+    //   new UglifyJsPlugin({
+    //     uglifyOptions: {
+    //       compress,
+    //       mangle: false,
+    //       output: {
+    //         beautify: true
+    //       }
+    //     },
+    //   })
+    // ],
+    // minimizer: [new UglifyJsPlugin(
+    //   {
+    //     cache: true,
+    //     parallel: true
+    //   }
+    // )],
+    // providedExports: true,
     usedExports: true,
+    sideEffects: false,
     // splitChunks: {
     //   cacheGroups: {
     //     vendor: {
