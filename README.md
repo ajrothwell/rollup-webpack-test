@@ -6,6 +6,8 @@ rollup-test - https://github.com/ajrothwell/rollup_test
 
 VueLib1 - https://github.com/ajrothwell/VueLib1
 
+comps_test - https://github.com/ajrothwell/comps_test
+
 Currently it imports the single export from rollup-test (which does not do any chunking).
 
 It then does a dynamic import of ExternalLink.vue, but it has to do it from the node_modules.
