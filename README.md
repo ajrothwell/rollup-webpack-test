@@ -2,7 +2,7 @@
 
 This has been used with many rollup vue libraries, to test tree-shaking, including:
 
-rollup-test - https://github.com/ajrothwell/rollup_vue_3
+rollup_vue_3 - https://github.com/ajrothwell/rollup_vue_3
 
 VueLib1 - https://github.com/ajrothwell/VueLib1
 
