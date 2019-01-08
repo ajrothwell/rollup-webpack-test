@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "phila-standards": "^1.0.2",
-    "rollup_test": "https://github.com/ajrothwell/rollup_test#15ebc69a0de2981a6a3fce6741031bd9d556f47b",
+    "rollup_vue_3": "https://github.com/ajrothwell/rollup_vue_3#919893469a482f597b6dcf660dd3d07893d3426d",
     "vue": "^2.5.17",
     "vuex": "^3.0.1",
     "webpack-visualizer-plugin": "^0.1.11"

@@ -71,7 +71,7 @@
           return;
         } else {
           // console.log('else')
-          return () => import('../../node_modules/rollup_test/src/components/ExternalLink.vue').then(console.log('after import'))
+          return () => import('../../node_modules/rollup_vue_3/src/components/ExternalLink.vue').then(console.log('after import'))
         }
       }
     },

@@ -3580,9 +3580,9 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
-"rollup_test@https://github.com/ajrothwell/rollup_test#15ebc69a0de2981a6a3fce6741031bd9d556f47b":
+"rollup_vue_3@https://github.com/ajrothwell/rollup_vue_3#919893469a482f597b6dcf660dd3d07893d3426d":
   version "1.0.0"
-  resolved "https://github.com/ajrothwell/rollup_test#15ebc69a0de2981a6a3fce6741031bd9d556f47b"
+  resolved "https://github.com/ajrothwell/rollup_vue_3#919893469a482f597b6dcf660dd3d07893d3426d"
   dependencies:
     vue "^2.5.17"
 
