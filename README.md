@@ -13,3 +13,6 @@ Currently it imports the single export from rollup_vue_3 (which does not do any 
 It then does a dynamic import of ExternalLink.vue, but it has to do it from the node_modules.
 
 Though the dynamic import seems to be working, it is not clear to me yet whether it can fully tree-shake.
+
+It can be seen in action live at https://ajrothwell.github.io/webpack_vue_3/dist/
+It can be analyzed in action live at https://ajrothwell.github.io/webpack_vue_3/dist/statistics.html
