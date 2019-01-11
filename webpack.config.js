@@ -10,8 +10,8 @@ const Visualizer = require('webpack-visualizer-plugin');
 // const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
-  // mode: 'production',
+  // mode: 'development',
+  mode: 'production',
   entry: {
     app: ['./public/index.html', './src/main.js'],
   },
