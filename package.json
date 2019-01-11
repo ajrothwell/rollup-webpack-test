@@ -9,8 +9,9 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server"
   },
   "dependencies": {
+    "element-ui": "https://github.com/ajrothwell/element#42c2ceb4b17362e8ebaba5114e4daee10a06c8f0",
     "phila-standards": "^1.0.2",
-    "rollup_vue_3": "https://github.com/ajrothwell/rollup_vue_3#919893469a482f597b6dcf660dd3d07893d3426d",
+    "rollup_vue_3": "https://github.com/ajrothwell/rollup_vue_3#5711ddb9c9cc99c596396f25e3698e5cf2bbd12c",
     "vue": "^2.5.17",
     "vuex": "^3.0.1",
     "webpack-visualizer-plugin": "^0.1.11"
@@ -21,25 +22,18 @@
     "@babel/preset-env": "^7.2.0",
     "@babel/register": "^7.0.0",
     "babel-loader": "^8.0.4",
+    "babel-plugin-component": "^1.1.1",
     "babel-plugin-dynamic-import-node-babel-7": "^2.0.7",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.0",
     "file-loader": "^2.0.0",
     "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^2.0.1",
+    "url-loader": "^1.1.2",
     "vue-loader": "^15.4.2",
     "vue-template-compiler": "^2.5.17",
     "webpack": "^4.27.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ],
-    "plugins": [
-      "dynamic-import-node-babel-7",
-      "@babel/plugin-syntax-dynamic-import"
-    ]
   }
 }

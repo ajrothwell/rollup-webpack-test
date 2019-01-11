@@ -1,8 +1,38 @@
 <template>
   <div>
-    <button @click="test()">Button</button>
-    <!-- <external-link class="ib" -->
-    <component :is="componentLoader"
+    <el-button type="primary" icon="el-icon-edit"></el-button>
+
+    <!-- <el-aaa
+      :slots="{
+        title: 'Address or Intersection Found',
+        value: 'test'
+      }"
+    ></el-aaa> -->
+
+    <badge
+      :slots="{
+        title: 'Address or Intersection Found',
+        value: 'test'
+      }"
+    ></badge>
+
+    <!-- <button @click="button1Click()">import external link</button>
+    <component :is="externalLinkLoader"
+               :options="{
+                  data: 'openmaps.phila.gov',
+                  href: 'https://openmaps.phila.gov'
+               }"
+    />
+    <br><br>
+
+    <button @click="button2Click()">import badge</button>
+    <component :is="badgeLoader"
+              :slots="{
+                title: 'Address or Intersection Found',
+                value: 'test'
+              }"
+    /> -->
+    <external-link class="ib"
                :options="{
                   data: 'openmaps.phila.gov',
                   href: 'https://openmaps.phila.gov'
@@ -27,6 +57,11 @@
 </template>
 
 <script>
+
+  // import { ExternalLink } from 'rollup_vue_4';
+  // import ExternalLink from '../../node_modules/rollup_vue_4/src/components/ExternalLink.vue';
+  // import { Badge } from 'rollup_vue_4';
+
   // import Vue from 'vue';
   // import { ExternalLink } from 'comps_test';
   // import map from 'lodash/map';
@@ -35,10 +70,7 @@
   // console.log('rollupTest:', rollupTest);
   // import { ExternalLink as Ext } from 'rollup_test';
   // console.log('ExternalLink:', ExternalLink);
-  // import { ExternalLink } from 'rollup_test/ExternalLink.vue';
   // import ExternalLink from '../../node_modules/comps_test/components/ExternalLink.vue';
-  // import ExternalLink from '../../node_modules/rollup_test/src/components/ExternalLink.vue';
-  // import { Badge } from 'rollup_test';
   // import { Callout } from 'rollup_test/Callout.vue';
   // import { Badge } from 'comps_test';
   // import Badge from '../../node_modules/comps_test/components/Badge.vue';
@@ -48,16 +80,17 @@
   export default {
 
     components: {
-      // ExternalLink: () => import('../../node_modules/rollup_test/src/components/ExternalLink.vue'),
+      // ExternalLink: () => import('../../node_modules/rollup_vue_4/src/components/ExternalLink.vue'),
       // ExternalLink,
       // Badge,
       // Callout
     },
     data() {
-      const test = {
-        useLink: false
+      const shouldAddComps = {
+        addLink: false,
+        addBadge: false
       }
-      return test;
+      return shouldAddComps;
     },
     // props: {
     //   componentType: {
@@ -66,20 +99,31 @@
     //   }
     // },
     computed: {
-      componentLoader () {
-        if (!this.$data.useLink) {
-          return;
-        } else {
-          // console.log('else')
-          return () => import('../../node_modules/rollup_vue_3/src/components/ExternalLink.vue').then(console.log('after import'))
-        }
-      }
+      // externalLinkLoader () {
+      //   if (!this.$data.addLink) {
+      //     return;
+      //   } else {
+      //     return () => import('../../node_modules/rollup_vue_3/src/components/ExternalLink.vue').then(console.log('after ExternalLink import'))
+      //   }
+      // },
+      // badgeLoader () {
+      //   if (!this.$data.addBadge) {
+      //     return;
+      //   } else {
+      //     return () => import('../../node_modules/rollup_vue_3/src/components/Badge.vue').then(console.log('after Badge import'))
+      //   }
+      // },
+
     },
     methods: {
-      test() {
-        // console.log('test, this.$data:', this.$data);
-        this.$data.useLink = true;
-      }
+      // button1Click() {
+      //   console.log('button1Click, this.$data:', this.$data);
+      //   this.$data.addLink = true;
+      // },
+      // button2Click() {
+      //   console.log('button2Click, this.$data:', this.$data);
+      //   this.$data.addBadge = true;
+      // }
     }
   }
 

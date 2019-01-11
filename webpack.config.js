@@ -18,7 +18,7 @@ module.exports = {
   resolve: {
     mainFields: ['module', 'main', 'browser'],
     alias: {
-      vue$: "vue/dist/vue.runtime.esm.js",
+      vue$: "vue/dist/vue.runtime.js",
       vuex$: "vuex/dist/vuex.esm.js"
     }
     // extensions: [".js", ".jsx"],
@@ -32,8 +32,9 @@ module.exports = {
   },
   // externals: Object.keys(dependencies),
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "app.js"
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].js',
+    publicPath: '/'
   },
   // resolve: { extensions: [".js", ".jsx"] },
   module: {
@@ -58,6 +59,14 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.otf|ttf|woff2?|eot(\?\S*)?$/,
+        loader: 'url-loader',
+        query: {
+          limit: 10000,
+          name: path.posix.join('static', '[name].[hash:7].[ext]')
+        }
       },
       {
         test: /\.html/,
