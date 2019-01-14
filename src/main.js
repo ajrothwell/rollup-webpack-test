@@ -3,7 +3,7 @@ import Vue from 'vue';
 import App from './components/App.vue';
 import { square } from './localFunctions';
 
-document.getElementById('test').innerHTML = square(10);
+document.getElementById('square').innerHTML = square(10);
 
 // import { Button, Select } from 'element-ui';
 import { Button, Aaa, Aab } from 'element-ui';
